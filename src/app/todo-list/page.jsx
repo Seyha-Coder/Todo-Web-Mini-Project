@@ -1,3 +1,4 @@
+"use server"
 import TodoCardComponent from '@/components/TodoCardComponent'
 import React from 'react'
 

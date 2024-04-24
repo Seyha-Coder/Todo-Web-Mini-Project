@@ -5,8 +5,10 @@ import Link from 'next/link'
 import signUp from '../../../../public/assets/icons/sign-up.svg'
 import registerAction from '@/actions/RegisterAction';
 import { useForm } from 'react-hook-form';
+import { useRouter } from 'next/navigation'
 
 function Register() {
+    // const router = useRouter();
     const {
         handleSubmit,
         formState: {errors},
@@ -16,6 +18,7 @@ function Register() {
     const handleRegister = async (data) => {
         console.log(data);
         await registerAction(data);
+       
     };
   return (
     <div className='flex items-center w-full h-screen'>
@@ -79,7 +82,7 @@ function Register() {
                             </div>
                             {/* <div className="w-[47%]">
                                  <label htmlFor="pf" className='block my-3 text-gray'>Profile : </label>
-                                <input type="text" id="pf" className="w-full p-2 border-2 rounded-md border-gray focus:outline-none placeholder:text-sm" placeholder="Enter your name" />
+                                <input type="text" id="pf" className="w-full p-2 border-2 rounded-md border-gray focus:outline-none placeholder:text-sm" placeholder="optional" />
                             </div> */}
                         </div>
                         <div className='flex justify-between my-6'>

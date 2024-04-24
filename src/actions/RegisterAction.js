@@ -11,6 +11,5 @@ export default async function registerAction(currentState) {
         gender: currentState.gender,
         
     };
-    console.log(newUser)
     await registerService(newUser);
 }
