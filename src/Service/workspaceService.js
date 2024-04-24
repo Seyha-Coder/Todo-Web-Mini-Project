@@ -15,6 +15,7 @@ export const getWorkSpaceService = async () => {
       {
         method: "GET",
         headers: headers,
+        cache: 'no-store'
       }
     );
 
@@ -33,24 +34,20 @@ export const getWorkSpaceService = async () => {
 export const createWorkSpaceService = async (req) => {
    
   try {
-    // const headers = await requestHeader();
-    const token = getToken();
-    console.log(token, "create token");
+    
+    const headers = await requestHeader();
     console.log(req, "reguest");
     const res = await fetch(
       "http://110.74.194.123:8989/api/todo/v1/workspaces",
       {
         method: "POST",
-        headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
-        },
+        headers:headers,
         body: JSON.stringify(req),
         cache: "no-store",
       }
     );
     console.log(res);
-    console.log(req)
+    console.log(req,'my req')
 
     if (!res.ok) {
       throw new Error(`HTTP error! Status: ${res.status}`);

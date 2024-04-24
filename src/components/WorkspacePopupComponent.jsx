@@ -9,7 +9,7 @@ export default function WorkspacePopupComponent() {
   const handleSubmit = async (data) => {
     "use server";
     console.log(data, "workspace");
-    let response = await createWorkSpaceService({
+    const response = await createWorkSpaceService({
       workspaceName: data.get("workspaceName"),
     });
     console.log(response, 'my info');
